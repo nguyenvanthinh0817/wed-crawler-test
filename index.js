@@ -8,7 +8,7 @@ const NavLink = require('./model/navLink');
 const mongoose = require('mongoose');
 const { insertMany } = require('./model/news');
 
-mongoose.connect(`mongodb://localhost:27017/${config.database}`, {
+mongoose.connect(config.database, {
   /// kết nối database
   useNewUrlParser: true,
   useUnifiedTopology: true,

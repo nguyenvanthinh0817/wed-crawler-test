@@ -1,0 +1,38 @@
+<form method="GET" action="/">
+    <h3>Chọn thể loại</h3>
+    <h5><span>{{q}}</span></h5>
+    <div class="input-group">
+
+
+        <select class="custom-select" id="inputGroupSelect04" name='q'>
+
+            {{#each navLinks}}
+
+            <option value="{{this.linkParent}}{{this.linkChilrent}}">
+                {{this.url}}{{this.linkParent}}{{this.linkChilrent}}</option>
+            {{/each}}
+        </select>
+        <div class="input-group-append">
+            <button href="/" class="btn btn-outline-secondary" type="submit">Tìm</button>
+        </div>
+
+    </div>
+</form>
+
+<div style="margin-top: 32px;">
+
+    {{#each newss}}
+    <div class="media" style="margin-top: 16px;">
+        <a href="/news/{{this._id}}"> <img class="align-self-center mr-3" src="{{this.avartar}}" style="width:128px"
+                alt="Generic placeholder image"></a>
+        <div class="media-body">
+            <h5 class="mt-0"> <a href="/news/{{this._id}}"
+                    style="color:black; text-decoration: none;">{{this.title}}</a></h5>
+            <a href="/news/{{this._id}}" style="color:black; text-decoration: none;">{{this.description}}</a>
+        </div>
+    </div>
+    {{/each}}
+
+
+
+</div>
